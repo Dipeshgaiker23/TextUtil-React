@@ -35,22 +35,22 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className='container'>
+            <div className='container' style={{color : props.mode==='dark'?'white':'black'}}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control" placeholder='Enter the text here'  id="myBox" value={text} onChange={handleOnChange} rows="10"></textarea>
+                    <textarea className="form-control" placeholder='Enter the text here'  id="myBox" style={{backgroundColor : props.mode==='dark'?'#032749':'white',color : props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} rows="10"></textarea>
                 </div>
                 <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
                 <button className="btn btn-primary mx-1 my1" onClick={handleLowClick}>Convert to Lowercase</button>
                 <button className="btn btn-primary mx-1 my1" onClick={handleClearClick}>Clear Text</button>
                 <button className="btn btn-primary mx-1 my1" onClick={handleCopy}>Copy Text</button>
             </div>
-            <div className="container my-4">
+            <div className="container my-4" style={{color : props.mode==='dark'?'white':'black'}}>
                 <h2>Your word summary</h2>
                 <p>{text.split(" ").length} words & {text.length} characters</p>
                 <p>{0.008 * text.split(" ").length} Miniutes are required to read this text</p>
                 <h2>Preview</h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"Enter the Text above in Text area to preview it here"}</p>
             </div>
         </>
     )
