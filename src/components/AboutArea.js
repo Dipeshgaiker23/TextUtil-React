@@ -11,7 +11,7 @@ export default function AboutArea() {
     const [btnText, setBtnText] =  useState('Enable Dark Mode');
 
     const toggleStyle = ()=>{
-        if (myStyle.color == '#2b2b2b') {
+        if (myStyle.color === '#2b2b2b') {
             setMyStyle({
                 color : "white",
                 backgroundColor : "#2b2b2b"
