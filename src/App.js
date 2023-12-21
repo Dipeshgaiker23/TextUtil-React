@@ -50,7 +50,7 @@ function App() {
         <AlertComp alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route exact path="/about" element={<AboutArea />}>
+            <Route exact path="/about" element={<AboutArea mode={mode} />}>
             </Route>
             <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />}>
             </Route>
